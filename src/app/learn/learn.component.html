@@ -1,0 +1,12 @@
+<div class="row learnRow">
+  <div 
+    class="col-sm-4 text-center" 
+    *ngFor = "let topic of topicLists"
+    style="margin-bottom: 25px;">
+      <app-topic 
+      [topicDetails] = "topic"
+      (click) = "getTopicData(topic.name)"
+      style="cursor: pointer"></app-topic>
+  </div>
+</div>
+

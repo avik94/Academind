@@ -1,0 +1,50 @@
+@media only screen and (min-width: 768px) {
+    .wrapper {
+      padding: 0 138px;
+    }
+}
+.author{
+  background: #fff;
+  padding: 2rem 3rem;
+  margin: 1rem auto;
+}
+.body{
+  background: #fff;
+  padding: 2rem 3rem;
+  margin: 1rem auto;
+}
+.author p{
+  color: #7d7d7d;
+  font-size: 1.8rem;
+  text-align: center;
+}
+.author span{
+  color: #521751;
+  font-weight: 700;
+}
+.emailRegister{
+  flex-grow: 1;
+  font-size: 2rem;
+  padding: 1rem;
+  font-family: inherit;
+  min-width: 100px;
+}
+.buttonRegister{
+  flex-grow: 1;
+  font-size: 2rem;
+  padding: 1rem;
+  font-family: inherit;
+  min-width: 100px;
+  padding: 15px;
+  background: #cccccc;
+}
+.feedBack{
+  flex-grow: 1;
+  font-size: 2rem;
+  padding: 1rem;
+  font-family: inherit;
+  min-width: 100px;
+  border: 1px solid violet;
+  background: transparent;
+  
+}
