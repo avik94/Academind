@@ -19,10 +19,10 @@ export class HomeComponent implements OnInit {
   }
 
   getCourseData(i,course){
-    if(course.udemyUrl === ""){
-      // this.router.navigate(['/course/details/'+this.index, i]);
-    }else{
+    if(course.udemyUrl !== ""){
       window.open(course.udemyUrl)
+      // this.router.navigate(['/course/details/'+this.index, i]);
+    // }else{
     }
   }
 

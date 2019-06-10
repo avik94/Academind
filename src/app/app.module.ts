@@ -6,12 +6,14 @@ import { HeaderComponent } from './header/header.component';
 import { Routes, RouterModule } from '@angular/router';
 import { LearnComponent } from './learn/learn.component';
 import { HomeComponent } from './home/home.component';
-import { TopicSerivice } from './learn/topic.service';
-import { TopicComponent } from './learn/topic/topic.component';
 import { AllCoursesComponent } from './all-courses/all-courses.component';
-import { EachCourseComponent } from './all-courses/each-course/each-course.component';
 import { SingleCourseComponent } from './single-course/single-course.component';
 import { FooterComponent } from './footer/footer.component';
+import { LearnModule } from './learn/learn.module';
+import { AllCourseModule } from './all-courses/all-course.module';
+import { HomeModule } from './home/home.module';
+import { TopicSerivice } from './learn/topic.service';
+import { SingleModule } from './single-course/single.module';
 
 const appRoutes:Routes=[
     { path:"", component: HomeComponent},
@@ -24,16 +26,14 @@ const appRoutes:Routes=[
   declarations: [
     AppComponent,
     HeaderComponent,
-    LearnComponent,
-    HomeComponent,
-    TopicComponent,
-    AllCoursesComponent,
-    EachCourseComponent,
-    SingleCourseComponent,
     FooterComponent
   ],
   imports: [
     BrowserModule,
+    HomeModule,
+    LearnModule,
+    AllCourseModule,
+    SingleModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [TopicSerivice],
