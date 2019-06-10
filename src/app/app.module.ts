@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { AllCourseModule } from './all-courses/all-course.module';
 import { HomeModule } from './home/home.module';
 import { TopicSerivice } from './learn/topic.service';
 import { SingleModule } from './single-course/single.module';
+import { ServerService } from './shared/server.service';
 
 const appRoutes:Routes=[
     { path:"", component: HomeComponent},
@@ -34,9 +36,10 @@ const appRoutes:Routes=[
     LearnModule,
     AllCourseModule,
     SingleModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [TopicSerivice],
+  providers: [TopicSerivice,ServerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

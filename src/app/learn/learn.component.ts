@@ -16,6 +16,7 @@ export class LearnComponent implements OnInit {
 
   ngOnInit() {
     this.topicLists = this.topicService.getTopicLists();
+    // console.log(this.topicLists)
   }
   getTopicData(name){
     let getName = name.split(" ");

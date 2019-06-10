@@ -20,7 +20,6 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.homeService.placeCourses();
     this.listOfCourse = this.homeService.getAllHomePageCourse();
-    console.log(this.homeService.getAllHomePageCourse())
   }
 
   getCourseData(topicId,courseId,course){
