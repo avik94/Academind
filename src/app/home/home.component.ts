@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from './home.service';
 import { TopicSerivice } from '../learn/topic.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,19 +11,23 @@ import { TopicSerivice } from '../learn/topic.service';
 })
 export class HomeComponent implements OnInit {
   
-  listOfCourse = this.homeService.getAllHomePageCourse();
+  listOfCourse = []
   constructor( private homeService:HomeService,
-    private topicService: TopicSerivice) { }
+    private topicService: TopicSerivice,
+    private router:Router
+    ) { }
 
   ngOnInit() {
-    console.log(this.listOfCourse)
+    this.homeService.placeCourses();
+    this.listOfCourse = this.homeService.getAllHomePageCourse();
+    console.log(this.homeService.getAllHomePageCourse())
   }
 
-  getCourseData(i,course){
-    if(course.udemyUrl !== ""){
-      window.open(course.udemyUrl)
-      // this.router.navigate(['/course/details/'+this.index, i]);
-    // }else{
+  getCourseData(topicId,courseId,course){
+    if(course.udemyUrl === ""){
+      this.router.navigate(['course/details/'+topicId, courseId]);
+    }else{
+      window.open(course.udemyUrl);
     }
   }
 

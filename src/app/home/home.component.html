@@ -1,11 +1,11 @@
 <div class="row learnRow">
-    <div 
-      class="col-sm-4 text-center"
-      *ngFor = "let course of listOfCourse let i = index" 
-      style="margin-bottom: 25px;">
-        <app-each-course 
-        [courseDetails] = "course"
-        (click) = "getCourseData(i,course)"
-        style="cursor: pointer"></app-each-course>
-    </div>
+  <div 
+    class="col-sm-4 text-center"
+    *ngFor = "let course of listOfCourse let i = index" 
+    style="margin-bottom: 25px;">
+    <app-each-course 
+      (click) = "getCourseData(course.topicId,course.courseId,course.courseBody)"
+      [courseDetails] = "course.courseBody"
+      style="cursor: pointer"></app-each-course>
   </div>
+</div>
